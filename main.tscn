@@ -33,8 +33,6 @@ shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="Vehicles"]
 script = ExtResource("1_ig7tw")
-enginer_power = null
-steer_limit = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Vehicles/VehicleBody3D"]
 mesh = SubResource("BoxMesh_ig7tw")

@@ -17,5 +17,5 @@ func _physics_process(delta: float) -> void:
 	#Braking
 	if Input.is_action_just_pressed("brake"):
 		brake = 30.0
-	else
+	else:
 		brake = 0.0
