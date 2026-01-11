@@ -52,3 +52,9 @@ use_as_traction = true
 [node name="BackRight" type="VehicleWheel3D" parent="Vehicles/VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, -0.2, -1.5)
 use_as_traction = true
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Vehicles/VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Vehicles/VehicleBody3D/SpringArm3D"]
+current = true
