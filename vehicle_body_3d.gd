@@ -1,21 +1,15 @@
 extends VehicleBody3D
 
-@export var enginer_power: float = 900.0
-@export var steer_limit: float = 0.4
+@export var engine_power: float = 1000.0
+@export var brake_power: float = 30.0
+@export var steer_angle: float = 0.5
 
 func _physics_process(delta: float) -> void:
-	# Steering
-	var steer_input = Input.get_axis("steer_right", "steer_left")
-	steering = lerp(steering, steer_input * steer_limit, delta * 5.0)
+	# Steering: Returns -0.5 (left), 0.5 (right) or 0 (none)
+	steering = Input.get_axis("steer_right","steer_left") * steer_angle
 	
-	# Power
-	if Input.is_action_just_pressed("accelerate"):
-		engine_force = enginer_power
-	else:
-		engine_force = 0.0
+	# Acceleration: Applies power when W is pressed
+	engine_force = Input.get_action_strength("accelerate") * engine_power
 	
-	#Braking
-	if Input.is_action_just_pressed("brake"):
-		brake = 30.0
-	else:
-		brake = 0.0
+	# Braking: Applies brake when S is pressed
+	brake = Input.get_action_strength("brake") * brake_power

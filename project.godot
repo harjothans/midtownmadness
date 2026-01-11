@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="midtownmadness"
+run/main_scene="uid://nr5maye1x4tw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

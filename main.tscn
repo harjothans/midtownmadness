@@ -28,6 +28,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+shadow_enabled = true
 
 [node name="Vehicles" type="Node3D" parent="."]
 
