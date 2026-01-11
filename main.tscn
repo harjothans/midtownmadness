@@ -1,13 +1,26 @@
-[gd_scene format=3 uid="uid://nr5maye1x4tw"]
+[gd_scene load_steps=3 format=3 uid="uid://nr5maye1x4tw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(100, 1, 100)
 
 [node name="Main" type="Node3D"]
 
 [node name="Environment" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Environment"]
+[node name="Floor" type="StaticBody3D" parent="Environment"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor"]
+mesh = SubResource("BoxMesh_7dm0k")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor"]
+shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 
 [node name="Vehicles" type="Node3D" parent="."]
+
+[node name="VehicleBody3D" type="VehicleBody3D" parent="Vehicles"]
