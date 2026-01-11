@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://nr5maye1x4tw"]
+[gd_scene load_steps=5 format=3 uid="uid://nr5maye1x4tw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 size = Vector3(100, 1, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
 size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(2, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+size = Vector3(2, 1, 4)
 
 [node name="Main" type="Node3D"]
 
@@ -24,3 +30,21 @@ shape = SubResource("BoxShape3D_ig7tw")
 [node name="Vehicles" type="Node3D" parent="."]
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="Vehicles"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Vehicles/VehicleBody3D"]
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vehicles/VehicleBody3D"]
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="FrontLeft" type="VehicleWheel3D" parent="Vehicles/VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, -0.2, 1.5)
+
+[node name="FrontRight" type="VehicleWheel3D" parent="Vehicles/VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, -0.2, 1.5)
+
+[node name="BackLeft" type="VehicleWheel3D" parent="Vehicles/VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, -0.2, -1.5)
+
+[node name="BackRight" type="VehicleWheel3D" parent="Vehicles/VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, -0.2, -1.5)
