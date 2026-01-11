@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://nr5maye1x4tw"]
+[gd_scene load_steps=6 format=3 uid="uid://nr5maye1x4tw"]
+
+[ext_resource type="Script" uid="uid://bvnu1ritu7cs3" path="res://vehicle_body_3d.gd" id="1_ig7tw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 size = Vector3(100, 1, 100)
@@ -30,6 +32,9 @@ shape = SubResource("BoxShape3D_ig7tw")
 [node name="Vehicles" type="Node3D" parent="."]
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="Vehicles"]
+script = ExtResource("1_ig7tw")
+enginer_power = null
+steer_limit = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Vehicles/VehicleBody3D"]
 mesh = SubResource("BoxMesh_ig7tw")
