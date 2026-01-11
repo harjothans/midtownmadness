@@ -39,12 +39,16 @@ shape = SubResource("BoxShape3D_0xm2m")
 
 [node name="FrontLeft" type="VehicleWheel3D" parent="Vehicles/VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, -0.2, 1.5)
+use_as_steering = true
 
 [node name="FrontRight" type="VehicleWheel3D" parent="Vehicles/VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, -0.2, 1.5)
+use_as_steering = true
 
 [node name="BackLeft" type="VehicleWheel3D" parent="Vehicles/VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, -0.2, -1.5)
+use_as_traction = true
 
 [node name="BackRight" type="VehicleWheel3D" parent="Vehicles/VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, -0.2, -1.5)
+use_as_traction = true
